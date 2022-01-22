@@ -23,6 +23,8 @@ $(selector).score({options});
 
 ### sample code
 
+Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop5782.github.io/score/demo/example.html)
+
 ```html
 <!DOCTYPE html>
 <html lang="ko">
