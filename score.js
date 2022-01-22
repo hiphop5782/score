@@ -13,6 +13,7 @@
 
     $.fn.score = function (options) {
         //기본 옵션
+        options = options || {};
         const settings = merge({
             starColor: "gold", //별 색상
             backgroundColor: "transparent", //배경 색상
