@@ -12,8 +12,8 @@
     }
 
     $.fn.score = function (options) {
-        //기본 옵션
         options = options || {};
+        //기본 옵션
         const settings = merge({
             starColor: "gold", //별 색상
             backgroundColor: "transparent", //배경 색상
@@ -22,11 +22,12 @@
             zeroAvailable:false,//0 설정 가능 여부
             display: {
                 showNumber: false, //설정된 숫자 표시 가능 여부
-                placeLimit: 1, //소수점 자리수 표시 길이    
+                placeLimit: 1, //소수점 자리수 표시 길이
+                textColor:"gold",//텍스트 색상
             },
             point: {
-                max: 5,
-                rate: 0,
+                max: 5,//최대 점수(data-max로 대체 가능)
+                rate: 0,//실제 점수(data-rate로 대체 가능)
             }
         }, options);
 
@@ -145,7 +146,7 @@
 
             //점수판 생성 및 배치(옵션)
             if (settings.display.showNumber) {
-                const displayPanel = $("<div>").addClass("display-panel").text(this._data.rate.toFixed(settings.display.placeLimit));
+                const displayPanel = $("<div>").addClass("display-panel").css("color", settings.display.textColor).text(this._data.rate.toFixed(settings.display.placeLimit));
                 displayPanel.appendTo(this);
             }
 
