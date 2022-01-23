@@ -34,15 +34,22 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>score demo</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.js"></script>
     <script>
         $(function(){
             $(".test-score1").score();
             $(".test-score2").score({
                 editable:true,
-                integerOnly:true,
                 display:{
                     showNumber:true,
+                    placeLimit:2
+                }
+            });
+            $(".test-score3").score({
+                editable:true,
+                integerOnly:true,
+                display:{
+                    showNumber:true
                 }
             });
         });
@@ -50,7 +57,10 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
 </head>
 <body>
     <div class="test-score1" data-max="5" data-rate="4.5"></div>
+    <hr>
     <div class="test-score2" data-max="5" data-rate="3"></div>
+    <hr>
+    <div class="test-score3" data-max="5"></div>
 </body>
 </html>
 ```
