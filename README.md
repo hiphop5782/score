@@ -11,8 +11,8 @@
 아래 둘 중 하나를 작성
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.min.js"></script>
 ```
 
 ### 사용법
