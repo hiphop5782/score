@@ -1,4 +1,4 @@
-[![version-info](https://img.shields.io/badge/release-v0.0.1-blue)](https://github.com/hiphop5782/score/releases/latest)
+[![version-info](https://img.shields.io/badge/release-v0.0.2-blue)](https://github.com/hiphop5782/score/releases/latest)
 
 # score jquery plugin
 
