@@ -71,7 +71,7 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
 
 기본 옵션은 다음과 같습니다.
 
-```
+```javascript
 {
   starColor: "gold", //별 색상
   backgroundColor: "transparent", //배경 색상
