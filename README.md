@@ -11,8 +11,8 @@
 아래 둘 중 하나를 작성
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.min.js"></script>
 ```
 
 ### 사용법
@@ -34,7 +34,7 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>score demo</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@0.0.2/score.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.js"></script>
     <script>
         $(function(){
             $(".test-score1").score();
