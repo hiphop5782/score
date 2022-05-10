@@ -20,6 +20,10 @@
             editable: false, //점수 변경 가능 여부
             integerOnly: false, //정수만 설정 가능 여부
             zeroAvailable:false,//0 설정 가능 여부
+            send: {
+                sendable:false,
+                name:"star",
+            },
             display: {
                 showNumber: false, //설정된 숫자 표시 가능 여부
                 placeLimit: 1, //소수점 자리수 표시 길이
@@ -37,7 +41,7 @@
         };
         const getPercentFromPointInteger = function (max, rate) {
             const segment = 100 / max;
-            return Math.floor(getPercentFromPoint(max, rate) / segment) * segment;
+            return Math.floor((getPercentFromPoint(max, rate) + segment / 2) / segment) * segment;
         };
         const getPointFromPercent = function (max, percent, limit) {
             const value = max * percent / 100;
@@ -68,12 +72,16 @@
                 $(this).parent().find(".display-panel").text(getPointFromPercent(data.max, percent));
             }
 
+            if (settings.send && settings.send.sendable) {
+                $(this).parent().find(".point-input").val(getPointFromPercent(data.max, percent));
+            }
+
             //이벤트 제거
-            if(e.type === "click"){
-                $(this).off("click");
-                $(this).off("mousemove");
-                $(this).one("mouseenter", enterHandler);
-            }    
+            // if(e.type === "click"){
+            //     $(this).off("click");
+            //     $(this).off("mousemove");
+            //     $(this).one("mouseenter", enterHandler);
+            // }    
         };
         function pointIntegerHandler (e) {
             //퍼센트 계산
@@ -96,12 +104,16 @@
                 $(this).parent().find(".display-panel").text(getPointFromPercent(data.max, percent));
             }
 
-            //이벤트 제거
-            if(e.type === "click"){
-                $(this).off("click");
-                $(this).off("mousemove");
-                $(this).one("mouseenter", enterHandler);
+            if (settings.send && settings.send.sendable) {
+                $(this).parent().find(".point-input").val(getPointFromPercent(data.max, percent));
             }
+
+            //이벤트 제거
+            // if(e.type === "click"){
+            //     $(this).off("click");
+            //     $(this).off("mousemove");
+            //     $(this).one("mouseenter", enterHandler);
+            // }
         };
 
         function enterHandler(e){
@@ -131,10 +143,10 @@
                 max:$(this).data("max") || settings.point.max,
                 rate:$(this).data("rate") || settings.point.rate,
             };
-            const percent = settings.display.integerOnly ? 
-                                                getPercentFromPointInteger(this._data.max, this._data.rate) 
-                                                : getPercentFromPoint(this._data.max, this._data.rate);
-
+            const percent = settings.integerOnly ? 
+                        getPercentFromPointInteger(this._data.max, this._data.rate) 
+                        : getPercentFromPoint(this._data.max, this._data.rate);
+                                                
             //영역 생성
             const star = $("<div>").addClass("star").css("position", "relative").css("display", "inline-flex");
             const foreground = $("<div>").addClass("foreground").css("overflow", "hidden").css("width", percent + "%").text(getFillStarText(this._data.max));
@@ -150,14 +162,26 @@
                 displayPanel.appendTo(this);
             }
 
+            //전송 가능 처리(옵션)
+            if (settings.send && settings.send.sendable) {
+                const input = $("<input>").attr("type", "hidden").attr("name", settings.send.name).addClass("point-input");
+                if(settings.integerOnly){
+                    input.val(getPointFromPercent(settings.point.max, percent));
+                }
+                else {
+                    input.val(getPointFromPercent(settings.point.max, percent));
+                }
+                input.appendTo(this);
+            }
+
             //변경 가능할 경우 처리
             if (settings.editable) {
                 if (settings.integerOnly) {
                     star.click(pointIntegerHandler);
-                    star.mousemove(pointIntegerHandler);
+                    //star.mousemove(pointIntegerHandler);
                 } else {
                     star.click(pointHandler);
-                    star.mousemove(pointHandler);
+                    //star.mousemove(pointHandler);
                 }
             }
 

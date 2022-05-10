@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../score.js"></script>
+    <script>
+        $(function(){
+            $(".score-wrapper").score({
+                editable:true,
+                integerOnly:true,
+                send: {
+                    sendable:true,
+                    name:"star",
+                },
+                display:{
+                    showNumber:true,
+                    placeLimit:0,
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <div class="score-wrapper" data-max="5" data-rate="4"></div>
+        <button>전송</button>
+    </form>
+</body>
+</html>
