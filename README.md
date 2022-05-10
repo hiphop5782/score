@@ -78,14 +78,18 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
     editable: false, //점수 변경 가능 여부
     integerOnly: false, //정수만 설정 가능 여부
     zeroAvailable:false,//0 설정 가능 여부
+    send:{
+        sendable:false,//전송 가능 여부
+        name:"star",//전송 가능할 경우 전송될 이름
+    },
     display: {
-    showNumber: false, //설정된 숫자 표시 가능 여부
-    placeLimit: 1, //소수점 자리수 표시 길이
-    textColor:"gold",//텍스트 색상
+        showNumber: false, //설정된 숫자 표시 가능 여부
+        placeLimit: 1, //소수점 자리수 표시 길이
+        textColor:"gold",//텍스트 색상
     },
     point: {
-    max: 5,//최대 점수(data-max로 대체 가능)
-    rate: 0,//실제 점수(data-rate로 대체 가능)
+        max: 5,//최대 점수(data-max로 대체 가능)
+        rate: 0,//실제 점수(data-rate로 대체 가능)
     }
 }
 ```
