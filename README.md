@@ -94,3 +94,52 @@ Result : [https://hiphop5782.github.io/score/demo/example.html](https://hiphop57
 }
 ```
 
+### starColor (String)
+별 모양의 배경 색상을 CSS String 형태로 지정
+- rgb()
+- rgba()
+- hex string
+- hsl()
+- hsla()
+
+### backgroundColor (String)
+배경 색상을 CSS String 형태로 지정
+- rgb()
+- rgba()
+- hex string
+- hsl()
+- hsla()
+
+### editable (Boolean)
+수정 가능 여부를 true/false로 설정
+
+- true : 수정 가능
+- false : 수정 불가
+
+### integerOnly (Boolean)
+점수를 정수로만 관리할 것인지를 true/false로 설정
+
+- true : 정수로만 표시. 소수점 미만은 반올림 처리
+- false : 소수점을 허용
+
+### zeroAvailable (Boolean)
+
+0을 설정할 수 있도록 할 것인지를 true/false로 설정
+
+- true : 0 설정을 가능하도록 처리
+- false : 0 설정을 불가능하도록 처리. 0 설정시 0.1로 변경
+
+### send (Object)
+전송과 관련된 설정
+- sendAvailable (Boolean) : 전송 가능 여부를 true/false로 설정
+- name (String) : 전송될 이름을 설정
+
+### display (Object)
+표시와 관련된 설정
+- showNumber (Boolean) : 숫자를 표시할 것인지를 true/false로 설정
+- placeLimit (Number) : 표시할 소수점 자리수를 설정(1 - 한자리, 2 - 두자리)
+- textColor (String) : 표시될 숫자의 글자색을 CSS String으로 설정
+
+### point (Object)
+- max (Number) : 설정할 최대 점수(data-max로 대체 가능)
+- rate (Number) : 설정할 실제 점수(data-rate로 대체 가능)
