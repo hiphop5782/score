@@ -1,7 +1,7 @@
 /*
     별점 표시기
     - https://github.com/hiphop5782/score
-    - version 0.0.3
+    - version 0.0.4
 */
 (function ($) {
     //External source - https://gist.github.com/ahtcx/0cd94e62691f539160b32ecda18af3d6
