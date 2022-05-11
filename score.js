@@ -154,8 +154,21 @@
                                                 
             //영역 생성
             const star = $("<div>").addClass("star").css("position", "relative").css("display", "inline-flex");
-            const foreground = $("<div>").addClass("foreground").css("overflow", "hidden").css("width", percent + "%").text(getFillStarText(this._data.max));
-            const background = $("<div>").addClass("background").css("position", "absolute").text(getEmptyStarText(this._data.max));
+            const foreground = $("<div>").addClass("foreground")
+                                                    .css({
+                                                        "overflow":"hidden",
+                                                        "width":percent+"%",
+                                                        "color":"inherit",
+                                                        "background-color":"inherit"
+                                                    })
+                                                    .text(getFillStarText(this._data.max));
+            const background = $("<div>").addClass("background")
+                                                        .css({
+                                                            "position":"absolute",
+                                                            "color":"inherit",
+                                                            "background-color":"inherit"
+                                                        })
+                                                        .text(getEmptyStarText(this._data.max));
 
             //영역 배치
             //star.append(foreground).append(background).appendTo(this);
