@@ -1,7 +1,7 @@
 /*
     별점 표시기
     - https://github.com/hiphop5782/score
-    - version 0.0.4
+    - version 0.0.5
 */
 (function ($) {
     //External source - https://gist.github.com/ahtcx/0cd94e62691f539160b32ecda18af3d6
@@ -153,7 +153,13 @@
                         : getPercentFromPoint(this._data.max, this._data.rate);
                                                 
             //영역 생성
-            const star = $("<div>").addClass("star").css("position", "relative").css("display", "inline-flex");
+            const star = $("<div>").addClass("star")
+                                                .css({
+                                                    "color":"inherit",
+                                                    "background-color":"inherit",
+                                                    "position":"relative",
+                                                    "display":"inline-flex"
+                                                });
             const foreground = $("<div>").addClass("foreground")
                                                     .css({
                                                         "overflow":"hidden",
