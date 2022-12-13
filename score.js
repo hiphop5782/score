@@ -137,10 +137,11 @@
         return this.each(function () {
             //기본 디자인
             $(this).css({
-                display: "inline-flex",
-                cursor: "pointer",
-                color: settings.starColor,
-                backgroundColor: settings.backgroundColor,
+                'display': "inline-flex",
+                'cursor': "pointer",
+                'color': settings.starColor,
+                'background-color': settings.backgroundColor,
+                'white-space':'nowrap',
             });
 
             //별점 설정
